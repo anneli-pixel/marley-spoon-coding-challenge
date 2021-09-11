@@ -1,0 +1,13 @@
+<h1><%= @recipe.title %></h1>
+
+<div class="d-flex flex-row align-items-end">
+  <h3><%= @recipe.chef.nil? ? "Chef: Unknown " : "Chef: #{@recipe.chef.fields[:name]}" %></h3>
+  <ul class="list-unstyled ms-2 mb-3">
+    <% @recipe.tags.each do |tag| %>
+      <li class="badge bg-light text-dark"><%= tag.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<img src="<%= @recipe.image_url %>" alt="" class="mx-auto mb-3" style="width: 100%">
+<%= @recipe.description %>

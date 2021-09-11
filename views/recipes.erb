@@ -1,7 +1,13 @@
 <h1>All recipes</h1>
 
-<ul>
-  <% @recipes.each do |recipy| %>
-    <li><%= recipy.title %></li>
-  <% end %>
-</ul>
+<div class="d-flex justify-content-start flex-wrap">
+  <% @recipes.each do |recipe| %>
+    <div class="m-2 border" style="width: 18rem;">
+      <img src="<%= recipe.image_url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= recipe.title %></h5>
+        <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  <% end %>  
+</div>
