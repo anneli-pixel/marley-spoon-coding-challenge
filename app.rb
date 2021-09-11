@@ -4,20 +4,21 @@ require "pry-byebug"
 require "better_errors"
 require "contentful"
 
-configure :development do
-  use BetterErrors::Middleware
-  BetterErrors.application_root = File.expand_path('..', __FILE__)
-end
-
 require_relative "recipe"
-require_relative "recipe_collection"
+require_relative "recipe_provider"
 
 get '/' do
-  recipe_collection = RecipeCollection.new()
-  @recipes = recipe_collection.all
+  redirect "/recipes"
+end
+
+get '/recipes' do
+  recipe_provider = RecipeProvider.new()
+  @recipes = recipe_provider.get_all_recipes
   erb :recipes
 end
 
-get '/recipes/:index' do
-  'Recipe view'
+get '/recipes/:id' do
+  recipe_provider = RecipeProvider.new()
+  @recipe = recipe_provider.find_recipe_by(params[:id])
+  erb :show
 end
