@@ -32,6 +32,8 @@ GEM
     http-form_data (2.3.0)
     http-parser (1.2.3)
       ffi-compiler (>= 1.0, < 2.0)
+    kramdown (2.3.1)
+      rexml
     method_source (1.0.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
@@ -47,6 +49,7 @@ GEM
     rack-protection (2.1.0)
       rack
     rake (13.0.6)
+    rexml (3.2.5)
     ruby2_keywords (0.0.5)
     sinatra (2.1.0)
       mustermann (~> 1.0)
@@ -71,6 +74,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   contentful
+  kramdown
   pry-byebug
   sinatra
   sinatra-contrib
