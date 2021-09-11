@@ -1,8 +1,4 @@
 require "sinatra"
-require "sinatra/reloader" if development?
-require "pry-byebug"
-require "better_errors"
-require "contentful"
 
 require_relative "recipe"
 require_relative "recipe_provider"
